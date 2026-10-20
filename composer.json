@@ -1,0 +1,24 @@
+{
+  "name": "dantweb/oxid-performance-tests",
+  "description": "Performance tests for OXID eShop: large catalogues, quicksearch over GraphQL, index experiments",
+  "type": "library",
+  "license": "GPL-3.0-only",
+  "require": {
+    "php": "^8.2",
+    "ext-pdo": "*",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dantweb\\OxidPerformanceTests\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dantweb\\OxidPerformanceTests\\Tests\\": "tests/"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         bootstrap="bootstrap.php"
+         cacheDirectory=".phpunit.cache"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         failOnWarning="true">
+  <testsuites>
+    <!-- Pure logic: runs anywhere, in seconds. -->
+    <testsuite name="Unit">
+      <directory>Unit/</directory>
+    </testsuite>
+    <!-- Against the 5 M-article perf shop; each test skips itself when PERF_GRAPHQL_URL / PERF_RUN are not set.
+         One run (none | btree | fulltext) per invocation: bin/run-sprint.sh drives all three. -->
+    <testsuite name="Performance">
+      <directory>Performance/</directory>
+    </testsuite>
+  </testsuites>
+  <source>
+    <include>
+      <directory>../src</directory>
+    </include>
+  </source>
+</phpunit>
